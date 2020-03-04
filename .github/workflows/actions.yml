@@ -11,10 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      env:
-        test_secret: ${{ secret.TEST_SECRET_KEY }}
-
-
       - uses: actions/checkout@v2
       # 자바 버전 설정
       - name: set up JDK 1.8
@@ -34,4 +30,4 @@ jobs:
 
       # 깃헙 시크릿 가져오기 테스트
       - name: Load Github secret value
-        run: echo $test_secret
+        run: echo test secret ${{ secrets.TEST_SECRET_KEY }}
