@@ -30,4 +30,6 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-
+      # 깃헙 시크릿 가져오기 테스트
+      - name: Load Github secret value
+        run: echo ${{ secret.TEST_SECRET_KEY }}
