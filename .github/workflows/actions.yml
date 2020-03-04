@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      env:
+        test_secret: ${{ secret.TEST_SECRET_KEY }}
+
+
       - uses: actions/checkout@v2
       # 자바 버전 설정
       - name: set up JDK 1.8
@@ -22,14 +26,12 @@ jobs:
       - name: Unit test 한글 되나 테스트
         run: bash ./gradlew test --stacktrace
 
-      # 테스트 스크립트
-      - name: Run a one-line script
-        run: echo Hello, world!
-      - name: Run a multi-line script
+      # 깃헙 환경변수 가져오기 테스트
+      - name: Load Github secret value
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo home : ${{ env.HOME }}
+          echo github_repo : ${{ env.GITHUB_REPOSITORY }}
 
       # 깃헙 시크릿 가져오기 테스트
       - name: Load Github secret value
-        run: echo ${{ secret.TEST_SECRET_KEY }}
+        run: echo $test_secret
