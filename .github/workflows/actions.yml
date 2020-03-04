@@ -18,3 +18,10 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+        
+  setup-android:
+    - name: setup-android
+    - uses: msfjarvis/setup-android@0.2
+    - with:
+        # Gradle tasks to run - If you want to run ./gradlew assemble, specify assemble here. 
+        gradleTasks: # optional, d
