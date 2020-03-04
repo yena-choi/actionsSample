@@ -22,11 +22,11 @@ jobs:
       - name: Unit test 한글 되나 테스트
         run: bash ./gradlew test --stacktrace
 
-      # 깃헙 환경변수 가져오기 테스트
-      - name: Load Github secret value
+      # 환경변수 가져오기 테스트
+      - name: Load local env vars
         run: |
-          echo home : ${{ env.HOME }}
-          echo github_repo : ${{ env.GITHUB_REPOSITORY }}
+          echo test_key_alias : ${{ env.TEST_KEY_ALIAS }}
+          echo test_key_pw : ${{ env.TEST_KEY_PW }}
 
       # 깃헙 시크릿 가져오기 테스트
       - name: Load Github secret value
