@@ -24,6 +24,7 @@ jobs:
 
       # 안드로이드 빌드
       - name: "Build Android project"
+        run: echo "java home : $JAVA_HOME"
         uses: vgaidarji/android-github-actions-build@v1.0.1
         with:
           args: "./gradlew assembleDebug"
