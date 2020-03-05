@@ -22,7 +22,7 @@ jobs:
           TEST_STORE_PW: ${{ secrets.TEST_STORE_PW }}
           TEST_KEY_ALIAS: ${{ secrets.TEST_KEY_ALIAS }}
           TEST_KEY_PW: ${{ secrets.TEST_KEY_PW }}
-          run: echo $TEST_DEBUG_KEY > ../cyn_debug_key.jks
+          run: echo ${{ secrets.TEST_DEBUG_KEY }} > ../cyn_debug_key.jks
 
       # 환경변수 가져오기 테스트
       - name: Load local env vars
