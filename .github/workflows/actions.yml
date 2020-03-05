@@ -15,7 +15,6 @@ jobs:
 
       # 안드로이드 빌드
       - name: "Build Android project"
-        uses: vgaidarji/android-github-actions-build@v1.0.1
         with:
           args: "./gradlew assembleDebug"
         env:
@@ -27,6 +26,7 @@ jobs:
             echo debug key-- $DEBUG_KEY
             echo $DEBUG_KEY > ../cyn_debug_key.jks
             echo cyn.jks-- $../cyn_debug_key.jks
+        uses: vgaidarji/android-github-actions-build@v1.0.1
 
 #      # 환경변수 가져오기 테스트
 #      - name: Load local env vars
