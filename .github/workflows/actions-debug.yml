@@ -22,9 +22,12 @@ jobs:
       - name: Unit test 한글 되나 테스트
         run: bash ./gradlew test --stacktrace
 
+      # JAVA_HOME 체크
+      - name: JAVA_HOME 체크
+        run: echo jav-home JAVA_HOME $JAVA_HOME
+
       # 안드로이드 빌드
       - name: "Build Android project"
-        run: echo jav-home JAVA_HOME $JAVA_HOME
         uses: vgaidarji/android-github-actions-build@v1.0.1
         with:
           args: "./gradlew assembleDebug"
