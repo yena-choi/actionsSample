@@ -10,13 +10,13 @@ android {
             keyAlias "$System.env.TEST_KEY_ALIAS"
             keyPassword "$System.env.TEST_KEY_PW"
             storePassword "$System.env.TEST_STORE_PW"
-            storeFile file('/Users/yenachoi/Desktop/cyn_release_key.jks')
+            storeFile file('../cyn_release_key.jks')
         }
         debug {
             keyAlias "$System.env.TEST_KEY_ALIAS"
             keyPassword "$System.env.TEST_KEY_PW"
             storePassword "$System.env.TEST_STORE_PW"
-            storeFile file('/Users/yenachoi/Desktop/cyn_debug_key.jks')
+            storeFile file('../cyn_debug_key.jks')
         }
     }
     compileSdkVersion 29
