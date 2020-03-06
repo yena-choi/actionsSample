@@ -23,10 +23,10 @@ jobs:
           TEST_KEY_PW: ${{ secrets.TEST_KEY_PW }}
           DEBUG_KEY: ${{ secrets.TEST_DEBUG_KEY }}
           run: |
-            echo $DEBUG_KEY=(openssl base64 -out key.jks)
-            echo debug key-- $DEBUG_KEY
+            echo $DEBUG_KEY=$($DEBUG_KEY | base64 --decode)
+            echo 디버그키---$DEBUG_KEY
             echo $DEBUG_KEY > ../cyn_debug_key.jks
-            echo cyn.jks-- $../cyn_debug_key.jks
+            echo 디크립트된cyn.jks-- ${../cyn_debug_key.jks}
         uses: vgaidarji/android-github-actions-build@v1.0.1
 
 #      # 환경변수 가져오기 테스트
