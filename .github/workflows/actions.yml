@@ -20,10 +20,8 @@ jobs:
 
       # 키 세팅
       - name: "Key setting"
-
         run: |
-          decrypted=echo $DEBUG_KEY | base64 --decode
-          echo $decrypted > ../cyn_debug_key.jks
+          echo $DEBUG_KEY | base64 -d > ../cyn_debug_key.jks
           echo decrypted_file--- ${../cyn_debug_key.jks}
 
       # 안드로이드 빌드
