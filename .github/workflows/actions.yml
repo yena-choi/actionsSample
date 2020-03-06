@@ -20,6 +20,9 @@ jobs:
 
       - uses: malinskiy/action-android/install-sdk@release/0.0.5
 
+      - name: Check Java ver
+        run: java -version
+
       # 키 세팅
       - name: "Key setting"
         run: |
