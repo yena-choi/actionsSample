@@ -22,7 +22,6 @@ jobs:
       - name: "Key setting"
         run: |
           echo $DEBUG_KEY | base64 -d > cyn_debug_key.jks
-          echo decrypted_file--- ${cyn_debug_key.jks}
 
       # 안드로이드 빌드
       - name: "Build Android project"
