@@ -23,7 +23,7 @@ jobs:
       # 키 세팅
       - name: "Key setting"
         run: |
-          openssl base64 -d -in $ENC_KEY -out decoded.jks
+          openssl base64 -d -in ${ENC_KEY} -out decoded.jks
           ls -al
           echo "---------------------------------------------------------"
 
