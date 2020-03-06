@@ -13,7 +13,7 @@ jobs:
       TEST_STORE_PW: ${{ secrets.TEST_STORE_PW }}
       TEST_KEY_ALIAS: ${{ secrets.TEST_KEY_ALIAS }}
       TEST_KEY_PW: ${{ secrets.TEST_KEY_PW }}
-      DEBUG_KEY: ${{ secrets.TEST_DEBUG_JKS }}
+      ENC_KEY: ${{ secrets.ENC }}
 
     steps:
       - uses: actions/checkout@v2
@@ -21,8 +21,9 @@ jobs:
       # 키 세팅
       - name: "Key setting"
         run: |
-          ech openssl base64 < $DEBUG_KEY | tr -d ‘\n’ | tee cyn_debug_key.jks
-          
+          echo $ENC_KEY | base64 -d > cyn_debug_key.jks
+
+
       # 안드로이드 빌드
       - name: "Build Android project"
         with:
