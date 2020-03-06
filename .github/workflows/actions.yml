@@ -15,17 +15,17 @@ jobs:
 
       # 키 세팅
       - name: "Key setting"
-        - env:
-            TEST_STORE_PW: ${{ secrets.TEST_STORE_PW }}
-            TEST_KEY_ALIAS: ${{ secrets.TEST_KEY_ALIAS }}
-            TEST_KEY_PW: ${{ secrets.TEST_KEY_PW }}
-            DEBUG_KEY: ${{ secrets.TEST_DEBUG_KEY }}
-            run: |
-              echo first_key_check---$DEBUG_KEY
-              echo $DEBUG_KEY | base64 --decode
-              echo second_key_check---$DEBUG_KEY
-              echo $DEBUG_KEY > ../cyn_debug_key.jks
-              echo decrypted_file--- ${../cyn_debug_key.jks}
+        env:
+          TEST_STORE_PW: ${{ secrets.TEST_STORE_PW }}
+          TEST_KEY_ALIAS: ${{ secrets.TEST_KEY_ALIAS }}
+          TEST_KEY_PW: ${{ secrets.TEST_KEY_PW }}
+          DEBUG_KEY: ${{ secrets.TEST_DEBUG_KEY }}
+          run: |
+            echo first_key_check---$DEBUG_KEY
+            echo $DEBUG_KEY | base64 --decode
+            echo second_key_check---$DEBUG_KEY
+            echo $DEBUG_KEY > ../cyn_debug_key.jks
+            echo decrypted_file--- ${../cyn_debug_key.jks}
 
       # 안드로이드 빌드
       - name: "Build Android project"
