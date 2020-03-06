@@ -13,7 +13,7 @@ jobs:
       TEST_STORE_PW: ${{ secrets.TEST_STORE_PW }}
       TEST_KEY_ALIAS: ${{ secrets.TEST_KEY_ALIAS }}
       TEST_KEY_PW: ${{ secrets.TEST_KEY_PW }}
-      ENC_KEY: ${{ secrets.ENC_KEY_ONE }}
+      ENC_KEY: ${{ secrets.ENC_KEY }}
 
     steps:
       - uses: actions/checkout@v2
@@ -23,7 +23,7 @@ jobs:
       # 키 세팅
       - name: "Key setting"
         run: |
-          echo $ENC_KEY | base64 -d > decoded.jks
+          echo $ENC_KEY | openssl base64 -d > decoded.jks
           ls -al
           echo "---------------------------------------------------------"
 
