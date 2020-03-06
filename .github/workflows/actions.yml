@@ -23,6 +23,9 @@ jobs:
       # 키 세팅
       - name: "Key setting"
         run: |
+          echo "current dir ------------------ "
+          pwd
+
           echo base64 --decode $ENC_KEY > dkey.jks
           ls -al
 
