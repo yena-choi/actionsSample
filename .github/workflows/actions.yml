@@ -21,7 +21,7 @@ jobs:
           TEST_KEY_PW: ${{ secrets.TEST_KEY_PW }}
           DEBUG_KEY: ${{ secrets.TEST_DEBUG_KEY }}
         run: |
-          echo $(DEBUG_KEY | base --decode) > ../cyn_debug_key.jks
+          echo $($DEBUG_KEY | base --decode) > ../cyn_debug_key.jks
           echo decrypted_file--- ${../cyn_debug_key.jks}
 
       # 안드로이드 빌드
