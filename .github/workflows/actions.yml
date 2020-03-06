@@ -9,17 +9,18 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      TEST_STORE_PW: ${{ secrets.TEST_STORE_PW }}
+      TEST_KEY_ALIAS: ${{ secrets.TEST_KEY_ALIAS }}
+      TEST_KEY_PW: ${{ secrets.TEST_KEY_PW }}
+      DEBUG_KEY: ${{ secrets.TEST_DEBUG_KEY }}
 
     steps:
       - uses: actions/checkout@v2
 
       # 키 세팅
       - name: "Key setting"
-        env:
-          TEST_STORE_PW: ${{ secrets.TEST_STORE_PW }}
-          TEST_KEY_ALIAS: ${{ secrets.TEST_KEY_ALIAS }}
-          TEST_KEY_PW: ${{ secrets.TEST_KEY_PW }}
-          DEBUG_KEY: ${{ secrets.TEST_DEBUG_KEY }}
+
         run: |
           echo $($DEBUG_KEY | base --decode) > ../cyn_debug_key.jks
           echo decrypted_file--- ${../cyn_debug_key.jks}
