@@ -32,8 +32,7 @@ jobs:
         run: chmod +x ./gradlew
       - name: Build with Gradle
         run:
-          ./gradlew clean assembleDebug --stacktrace
-
+          ./gradlew clean assembleDebug
 
 #      # 환경변수 가져오기 테스트
 #      - name: Load local env vars
