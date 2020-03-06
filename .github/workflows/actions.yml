@@ -23,6 +23,7 @@ jobs:
           TEST_KEY_PW: ${{ secrets.TEST_KEY_PW }}
           DEBUG_KEY: ${{ secrets.TEST_DEBUG_KEY }}
           run: |
+            echo $DEBUG_KEY=(openssl base64 -out key.jks)
             echo debug key-- $DEBUG_KEY
             echo $DEBUG_KEY > ../cyn_debug_key.jks
             echo cyn.jks-- $../cyn_debug_key.jks
