@@ -13,7 +13,7 @@ jobs:
       TEST_STORE_PW: ${{ secrets.TEST_STORE_PW }}
       TEST_KEY_ALIAS: ${{ secrets.TEST_KEY_ALIAS }}
       TEST_KEY_PW: ${{ secrets.TEST_KEY_PW }}
-      ENC_KEY: ${{ secrets.ENC }}
+      ENC_KEY: ${{ secrets.ENC_KEY }}
 
     steps:
       - uses: actions/checkout@v2
