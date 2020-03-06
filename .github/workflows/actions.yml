@@ -23,8 +23,8 @@ jobs:
       # 키 세팅
       - name: "Key setting"
         run: |
-          echo base64 --decode $ENC_KEY > dkey.keystore
-          echo "YENA : " dkey.keystore
+          echo base64 --decode $ENC_KEY > dkey.jks
+          echo "YENA : " dkey.jks
           echo " ============================================================================"
           echo "YENA : " $ENC_KEY
 
@@ -32,7 +32,7 @@ jobs:
         run: chmod +x ./gradlew
       - name: Build with Gradle
         run:
-          ./gradlew clean assembleDebug
+          ./gradlew clean assembleDebug --debug
 
 #      # 환경변수 가져오기 테스트
 #      - name: Load local env vars
