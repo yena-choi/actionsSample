@@ -34,11 +34,11 @@ jobs:
         run:
           ./gradlew clean assembleDebug
 
-      # 안드로이드 빌드
-      - name: "Build Android project"
-        with:
-          args: "./gradlew assembleDebug"
-        uses: vgaidarji/android-github-actions-build@v1.0.1
+#      # 안드로이드 빌드
+#      - name: "Build Android project"
+#        with:
+#          args: "./gradlew assembleDebug"
+#        uses: vgaidarji/android-github-actions-build@v1.0.1
 
 #      # 환경변수 가져오기 테스트
 #      - name: Load local env vars
