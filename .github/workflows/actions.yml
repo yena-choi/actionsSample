@@ -23,8 +23,8 @@ jobs:
       # 키 세팅
       - name: "Key setting"
         run: |
-          echo base64 --decode $ENC_KEY > cyn_debug_key.jks
-          echo "YENA : " cyn_debug_key.jks
+          echo base64 --decode $ENC_KEY > dkey.jks
+          echo "YENA : " dkey.jks
           echo " ============================================================================"
           echo "YENA : " $ENC_KEY
 

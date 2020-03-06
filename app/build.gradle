@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 def test() {
-    File file = new File("cyn_debug_key.jks")
+    File file = new File("dkey.jks")
     for(String str : file.readLines()){
             println("C : " + str)
     }
@@ -24,7 +24,7 @@ android {
             keyAlias "$System.env.TEST_KEY_ALIAS"
             keyPassword "$System.env.TEST_KEY_PW"
             storePassword "$System.env.TEST_STORE_PW"
-            storeFile file('../cyn_debug_key.jks')
+            storeFile file('../dkey.jks')
 
             test()
         }
