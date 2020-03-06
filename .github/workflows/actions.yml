@@ -18,10 +18,22 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - uses: malinskiy/action-android/install-sdk@release/0.0.5
+        -
       # 키 세팅
       - name: "Key setting"
         run: |
           echo base64 --decode $ENC_KEY > cyn_debug_key.jks
+          echo "YENA : " cyn_debug_key.jks
+          echo " ============================================================================"
+          echo "YENA : " $ENC_KEY
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+      - name: Build with Gradle
+        run:
+          ./gradlew clean assembleDebug
+
       # 안드로이드 빌드
       - name: "Build Android project"
         with:
