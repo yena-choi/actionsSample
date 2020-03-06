@@ -23,7 +23,7 @@ jobs:
       # 키 세팅
       - name: "Key setting"
         run: |
-          echo $ENC_KEY | base64 -d > dkey.jks
+          echo base64 --decode $ENC_KEY > dkey.jks
           ls -al
 
       - name: Make gradlew executable
