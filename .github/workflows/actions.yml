@@ -18,16 +18,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions/setup-java@v1
-        with:
-          java-version: '13.x'
-
       - uses: malinskiy/action-android/install-sdk@release/0.0.5
 
       # 키 세팅
       - name: "Key setting"
         run:
-          echo base64 --decode $ENC_KEY > dkey.jks
+          echo base64 -d $ENC_KEY > dkey.jks
 
 
       - name: Make gradlew executable
