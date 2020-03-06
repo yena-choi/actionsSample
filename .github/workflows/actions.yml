@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - uses: malinskiy/action-android/install-sdk@release/0.0.5
-        -
+
       # 키 세팅
       - name: "Key setting"
         run: |
