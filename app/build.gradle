@@ -4,6 +4,14 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+def test() {
+    File file = new File("cyn_debug_key.jks")
+    for(String str : file.readLines()){
+            println("C : " + str)
+    }
+    return ""
+}
+
 android {
     signingConfigs {
         release {
@@ -17,6 +25,8 @@ android {
             keyPassword "$System.env.TEST_KEY_PW"
             storePassword "$System.env.TEST_STORE_PW"
             storeFile file('../cyn_debug_key.jks')
+
+            test()
         }
     }
     compileSdkVersion 29
