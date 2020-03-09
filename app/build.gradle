@@ -24,7 +24,7 @@ android {
             keyAlias "$System.env.TEST_KEY_ALIAS"
             keyPassword "$System.env.TEST_KEY_PW"
             storePassword "$System.env.TEST_STORE_PW"
-            storeFile file('../decoded.keystore')
+            storeFile file('../cyn_debug_key.jks')
 
 //            test()
         }

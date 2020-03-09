@@ -23,7 +23,9 @@ jobs:
       # 키 세팅
       - name: "Key setting"
         run:
-          echo $ENC_KEY | openssl base64 -d > decoded.keystore
+#          echo $ENC_KEY | base64 -d > cyn_debug_key.jks
+#          echo openssl base64 -d -in $ENC_KEY -out cyn_debug_key.jks
+          echo "$ENC_KEY" | base64 --decode > cyn_debug_key.jks
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
